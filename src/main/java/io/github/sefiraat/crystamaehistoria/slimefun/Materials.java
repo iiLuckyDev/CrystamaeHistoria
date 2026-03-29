@@ -11,6 +11,7 @@ import io.github.sefiraat.crystamaehistoria.utils.Skulls;
 import io.github.sefiraat.crystamaehistoria.utils.TextUtils;
 import io.github.sefiraat.crystamaehistoria.utils.theme.ThemeType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
@@ -24,6 +25,10 @@ import java.util.Map;
 
 @UtilityClass
 public class Materials {
+
+    private static ItemStack item(SlimefunItemStack stack) {
+        return stack.item();
+    }
 
     private static final Map<StoryType, SlimefunItem> DUMMY_CRYSTAL_MAP = new EnumMap<>(StoryType.class);
     static final Map<StoryRarity, Map<StoryType, SlimefunItem>> CRYSTAL_MAP = new EnumMap<>(StoryRarity.class);
@@ -136,12 +141,12 @@ public class Materials {
             ItemGroups.MATERIALS,
             CrystaStacks.CRYSTAL_BLANK,
             CrystaRecipeTypes.NETHER_DRAINING,
-            CrystaRecipeTypes.getDummyRecipe(CrystaStacks.CRYSTAL_BLANK)
+            CrystaRecipeTypes.getDummyRecipe(item(CrystaStacks.CRYSTAL_BLANK))
         );
 
         // Polychromatic Crystal
         RecipeItem polychromaticCrystalRecipe = new RecipeItem(
-            CrystaStacks.CRYSTAL_BLANK,
+            item(CrystaStacks.CRYSTAL_BLANK),
             StoryType.ELEMENTAL, 10,
             StoryType.MECHANICAL, 10,
             StoryType.ALCHEMICAL, 10
@@ -156,7 +161,7 @@ public class Materials {
 
         // Kaleidoscopic Crystal
         RecipeItem kaleidoscopicCrystalRecipe = new RecipeItem(
-            CrystaStacks.CRYSTAL_BLANK,
+            item(CrystaStacks.CRYSTAL_BLANK),
             StoryType.HISTORICAL, 10,
             StoryType.HUMAN, 10,
             StoryType.ANIMAL, 10
@@ -171,7 +176,7 @@ public class Materials {
 
         // Motley Crystal
         RecipeItem motleyCrystalRecipe = new RecipeItem(
-            CrystaStacks.CRYSTAL_BLANK,
+            item(CrystaStacks.CRYSTAL_BLANK),
             StoryType.CELESTIAL, 10,
             StoryType.VOID, 10,
             StoryType.PHILOSOPHICAL, 10
@@ -191,7 +196,7 @@ public class Materials {
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
                 null, null, null,
-                CrystaStacks.CRYSTAL_POLYCHROMATIC, CrystaStacks.CRYSTAL_KALEIDOSCOPIC, CrystaStacks.CRYSTAL_MOTLEY,
+                item(CrystaStacks.CRYSTAL_POLYCHROMATIC), item(CrystaStacks.CRYSTAL_KALEIDOSCOPIC), item(CrystaStacks.CRYSTAL_MOTLEY),
                 null, null, null
             }
         );
@@ -310,7 +315,7 @@ public class Materials {
             CrystaStacks.AMALGAMATE_INGOT_COMMON,
             RecipeType.SMELTERY,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_COMMON
+                item(CrystaStacks.AMALGAMATE_DUST_COMMON)
             }
         );
 
@@ -320,7 +325,7 @@ public class Materials {
             CrystaStacks.AMALGAMATE_INGOT_UNCOMMON,
             RecipeType.SMELTERY,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_UNCOMMON
+                item(CrystaStacks.AMALGAMATE_DUST_UNCOMMON)
             }
         );
 
@@ -330,7 +335,7 @@ public class Materials {
             CrystaStacks.AMALGAMATE_INGOT_RARE,
             RecipeType.SMELTERY,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_RARE
+                item(CrystaStacks.AMALGAMATE_DUST_RARE)
             }
         );
 
@@ -340,7 +345,7 @@ public class Materials {
             CrystaStacks.AMALGAMATE_INGOT_EPIC,
             RecipeType.SMELTERY,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_EPIC
+                item(CrystaStacks.AMALGAMATE_DUST_EPIC)
             }
         );
 
@@ -350,7 +355,7 @@ public class Materials {
             CrystaStacks.AMALGAMATE_INGOT_MYTHICAL,
             RecipeType.SMELTERY,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_MYTHICAL
+                item(CrystaStacks.AMALGAMATE_DUST_MYTHICAL)
             }
         );
 
@@ -360,7 +365,7 @@ public class Materials {
             CrystaStacks.AMALGAMATE_INGOT_UNIQUE,
             RecipeType.SMELTERY,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_UNIQUE
+                item(CrystaStacks.AMALGAMATE_DUST_UNIQUE)
             }
         );
 
@@ -406,9 +411,9 @@ public class Materials {
             CrystaStacks.GILDED_PEARL,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                SlimefunItems.GILDED_IRON, SlimefunItems.GILDED_IRON, SlimefunItems.GILDED_IRON,
-                SlimefunItems.GILDED_IRON, CrystaStacks.UNCANNY_PEARL, SlimefunItems.GILDED_IRON,
-                SlimefunItems.GILDED_IRON, SlimefunItems.GILDED_IRON, SlimefunItems.GILDED_IRON
+                item(SlimefunItems.GILDED_IRON), item(SlimefunItems.GILDED_IRON), item(SlimefunItems.GILDED_IRON),
+                item(SlimefunItems.GILDED_IRON), item(CrystaStacks.UNCANNY_PEARL), item(SlimefunItems.GILDED_IRON),
+                item(SlimefunItems.GILDED_IRON), item(SlimefunItems.GILDED_IRON), item(SlimefunItems.GILDED_IRON)
             }
         );
 

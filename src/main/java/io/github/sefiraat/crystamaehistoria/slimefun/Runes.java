@@ -1,6 +1,7 @@
 package io.github.sefiraat.crystamaehistoria.slimefun;
 
 import io.github.sefiraat.crystamaehistoria.CrystamaeHistoria;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
@@ -65,6 +66,10 @@ public class Runes {
     @Getter
     private static UnplaceableBlock runeBrightShield;
 
+    private static ItemStack item(SlimefunItemStack stack) {
+        return stack.item();
+    }
+
     public static void setup() {
 
         CrystamaeHistoria plugin = CrystamaeHistoria.getInstance();
@@ -75,9 +80,9 @@ public class Runes {
             CrystaStacks.RUNE_BEAST,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                SlimefunItems.INFERNAL_BONEMEAL, SlimefunItems.NECROTIC_SKULL, new ItemStack(Material.BONE),
-                new ItemStack(Material.LEAD), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.LEAD),
-                new ItemStack(Material.BONE), SlimefunItems.NECROTIC_SKULL, SlimefunItems.INFERNAL_BONEMEAL
+                item(SlimefunItems.INFERNAL_BONEMEAL), item(SlimefunItems.NECROTIC_SKULL), new ItemStack(Material.BONE),
+                new ItemStack(Material.LEAD), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.LEAD),
+                new ItemStack(Material.BONE), item(SlimefunItems.NECROTIC_SKULL), item(SlimefunItems.INFERNAL_BONEMEAL)
             }
         );
 
@@ -87,9 +92,9 @@ public class Runes {
             CrystaStacks.RUNE_BEGINNING,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.GILDED_PEARL, new ItemStack(Material.SHULKER_SHELL), SlimefunItems.URANIUM,
-                new ItemStack(Material.AZURE_BLUET), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.AZURE_BLUET),
-                SlimefunItems.URANIUM, new ItemStack(Material.SHULKER_SHELL), CrystaStacks.GILDED_PEARL
+                item(CrystaStacks.GILDED_PEARL), new ItemStack(Material.SHULKER_SHELL), item(SlimefunItems.URANIUM),
+                new ItemStack(Material.AZURE_BLUET), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.AZURE_BLUET),
+                item(SlimefunItems.URANIUM), new ItemStack(Material.SHULKER_SHELL), item(CrystaStacks.GILDED_PEARL)
             }
         );
 
@@ -99,9 +104,9 @@ public class Runes {
             CrystaStacks.RUNE_MOON,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.ANGEL_BLOCK, new ItemStack(Material.WITHER_ROSE), SlimefunItems.POWER_CRYSTAL,
-                new ItemStack(Material.GRAY_DYE), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.GRAY_DYE),
-                SlimefunItems.POWER_CRYSTAL, new ItemStack(Material.WITHER_ROSE), CrystaStacks.ANGEL_BLOCK
+                item(CrystaStacks.ANGEL_BLOCK), new ItemStack(Material.WITHER_ROSE), item(SlimefunItems.POWER_CRYSTAL),
+                new ItemStack(Material.GRAY_DYE), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.GRAY_DYE),
+                item(SlimefunItems.POWER_CRYSTAL), new ItemStack(Material.WITHER_ROSE), item(CrystaStacks.ANGEL_BLOCK)
             }
         );
 
@@ -111,9 +116,9 @@ public class Runes {
             CrystaStacks.RUNE_GATE,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.STAVE_BASIC, new ItemStack(Material.BLAZE_ROD), SlimefunItems.GOLD_24K,
-                new ItemStack(Material.CRIMSON_FENCE_GATE), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.CRIMSON_FENCE_GATE),
-                SlimefunItems.GOLD_24K, new ItemStack(Material.BLAZE_ROD), CrystaStacks.STAVE_BASIC
+                item(CrystaStacks.STAVE_BASIC), new ItemStack(Material.BLAZE_ROD), item(SlimefunItems.GOLD_24K),
+                new ItemStack(Material.CRIMSON_FENCE_GATE), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.CRIMSON_FENCE_GATE),
+                item(SlimefunItems.GOLD_24K), new ItemStack(Material.BLAZE_ROD), item(CrystaStacks.STAVE_BASIC)
             }
         );
 
@@ -123,9 +128,9 @@ public class Runes {
             CrystaStacks.RUNE_TRUE_EARTH,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.DREADFUL_DIRT, new ItemStack(Material.PODZOL), CrystaStacks.CURSED_EARTH,
-                new ItemStack(Material.MOSS_BLOCK), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.MOSS_BLOCK),
-                CrystaStacks.CURSED_EARTH, new ItemStack(Material.PODZOL), CrystaStacks.DREADFUL_DIRT
+                item(CrystaStacks.DREADFUL_DIRT), new ItemStack(Material.PODZOL), item(CrystaStacks.CURSED_EARTH),
+                new ItemStack(Material.MOSS_BLOCK), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.MOSS_BLOCK),
+                item(CrystaStacks.CURSED_EARTH), new ItemStack(Material.PODZOL), item(CrystaStacks.DREADFUL_DIRT)
             }
         );
 
@@ -135,9 +140,9 @@ public class Runes {
             CrystaStacks.RUNE_CHANGE,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.ENDER_INHIBITOR_BASIC, new ItemStack(Material.LEVER), SlimefunItems.PROGRAMMABLE_ANDROID,
-                new ItemStack(Material.POLISHED_BLACKSTONE_BUTTON), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.POLISHED_BLACKSTONE_BUTTON),
-                SlimefunItems.PROGRAMMABLE_ANDROID, new ItemStack(Material.LEVER), CrystaStacks.ENDER_INHIBITOR_BASIC
+                item(CrystaStacks.ENDER_INHIBITOR_BASIC), new ItemStack(Material.LEVER), item(SlimefunItems.PROGRAMMABLE_ANDROID),
+                new ItemStack(Material.POLISHED_BLACKSTONE_BUTTON), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.POLISHED_BLACKSTONE_BUTTON),
+                item(SlimefunItems.PROGRAMMABLE_ANDROID), new ItemStack(Material.LEVER), item(CrystaStacks.ENDER_INHIBITOR_BASIC)
             }
         );
 
@@ -147,9 +152,9 @@ public class Runes {
             CrystaStacks.RUNE_NIGHT,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.DISPLACED_VOID, new ItemStack(Material.CLOCK), SlimefunItems.NEPTUNIUM,
-                new ItemStack(Material.WEEPING_VINES), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.WEEPING_VINES),
-                SlimefunItems.NEPTUNIUM, new ItemStack(Material.CLOCK), CrystaStacks.DISPLACED_VOID
+                item(CrystaStacks.DISPLACED_VOID), new ItemStack(Material.CLOCK), item(SlimefunItems.NEPTUNIUM),
+                new ItemStack(Material.WEEPING_VINES), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.WEEPING_VINES),
+                item(SlimefunItems.NEPTUNIUM), new ItemStack(Material.CLOCK), item(CrystaStacks.DISPLACED_VOID)
             }
         );
 
@@ -159,9 +164,9 @@ public class Runes {
             CrystaStacks.RUNE_BLACK,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.PAINT_BRUSH_BLACK_100, new ItemStack(Material.BLACK_CANDLE), SlimefunItems.NECROTIC_SKULL,
-                new ItemStack(Material.BLACK_STAINED_GLASS_PANE), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.BLACK_STAINED_GLASS_PANE),
-                SlimefunItems.NECROTIC_SKULL, new ItemStack(Material.BLACK_CANDLE), CrystaStacks.PAINT_BRUSH_BLACK_100
+                item(CrystaStacks.PAINT_BRUSH_BLACK_100), new ItemStack(Material.BLACK_CANDLE), item(SlimefunItems.NECROTIC_SKULL),
+                new ItemStack(Material.BLACK_STAINED_GLASS_PANE), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.BLACK_STAINED_GLASS_PANE),
+                item(SlimefunItems.NECROTIC_SKULL), new ItemStack(Material.BLACK_CANDLE), item(CrystaStacks.PAINT_BRUSH_BLACK_100)
             }
         );
 
@@ -171,9 +176,9 @@ public class Runes {
             CrystaStacks.RUNE_TRUE_HOLY,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.SOUL_STAND, new ItemStack(Material.WHITE_TULIP), CrystaStacks.BODY_STAND,
-                CrystaStacks.MIND_STAND, CrystaStacks.ARCANE_SIGIL, CrystaStacks.MIND_STAND,
-                CrystaStacks.BODY_STAND, new ItemStack(Material.WHITE_TULIP), CrystaStacks.SOUL_STAND
+                item(CrystaStacks.SOUL_STAND), new ItemStack(Material.WHITE_TULIP), item(CrystaStacks.BODY_STAND),
+                item(CrystaStacks.MIND_STAND), item(CrystaStacks.ARCANE_SIGIL), item(CrystaStacks.MIND_STAND),
+                item(CrystaStacks.BODY_STAND), new ItemStack(Material.WHITE_TULIP), item(CrystaStacks.SOUL_STAND)
             }
         );
 
@@ -183,9 +188,9 @@ public class Runes {
             CrystaStacks.RUNE_DRAGON,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_RARE, new ItemStack(Material.DRAGON_HEAD), new ItemStack(Material.DRAGON_EGG),
-                new ItemStack(Material.DRAGON_BREATH), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.DRAGON_BREATH),
-                new ItemStack(Material.DRAGON_EGG), new ItemStack(Material.DRAGON_HEAD), CrystaStacks.AMALGAMATE_DUST_RARE
+                item(CrystaStacks.AMALGAMATE_DUST_RARE), new ItemStack(Material.DRAGON_HEAD), new ItemStack(Material.DRAGON_EGG),
+                new ItemStack(Material.DRAGON_BREATH), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.DRAGON_BREATH),
+                new ItemStack(Material.DRAGON_EGG), new ItemStack(Material.DRAGON_HEAD), item(CrystaStacks.AMALGAMATE_DUST_RARE)
             }
         );
 
@@ -195,9 +200,9 @@ public class Runes {
             CrystaStacks.RUNE_TRUE_WATER,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EXALTED_SEA_BREEZE, new ItemStack(Material.WATER_BUCKET), SlimefunItems.WATER_RUNE,
-                new ItemStack(Material.NAUTILUS_SHELL), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.NAUTILUS_SHELL),
-                SlimefunItems.WATER_RUNE, new ItemStack(Material.WATER_BUCKET), CrystaStacks.EXALTED_SEA_BREEZE
+                item(CrystaStacks.EXALTED_SEA_BREEZE), new ItemStack(Material.WATER_BUCKET), item(SlimefunItems.WATER_RUNE),
+                new ItemStack(Material.NAUTILUS_SHELL), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.NAUTILUS_SHELL),
+                item(SlimefunItems.WATER_RUNE), new ItemStack(Material.WATER_BUCKET), item(CrystaStacks.EXALTED_SEA_BREEZE)
             }
         );
 
@@ -207,9 +212,9 @@ public class Runes {
             CrystaStacks.RUNE_SOVEREIGN,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.CONNECTING_COMPASS, new ItemStack(Material.BELL), SlimefunItems.CARBONADO,
-                new ItemStack(Material.OBSIDIAN), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.OBSIDIAN),
-                SlimefunItems.CARBONADO, new ItemStack(Material.BELL), CrystaStacks.CONNECTING_COMPASS
+                item(CrystaStacks.CONNECTING_COMPASS), new ItemStack(Material.BELL), item(SlimefunItems.CARBONADO),
+                new ItemStack(Material.OBSIDIAN), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.OBSIDIAN),
+                item(SlimefunItems.CARBONADO), new ItemStack(Material.BELL), item(CrystaStacks.CONNECTING_COMPASS)
             }
         );
 
@@ -219,9 +224,9 @@ public class Runes {
             CrystaStacks.RUNE_SUN,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EXALTED_SUN, new ItemStack(Material.SHROOMLIGHT), SlimefunItems.BLISTERING_INGOT_3,
-                new ItemStack(Material.GLOWSTONE), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.GLOWSTONE),
-                SlimefunItems.BLISTERING_INGOT_3, new ItemStack(Material.SHROOMLIGHT), CrystaStacks.EXALTED_SUN
+                item(CrystaStacks.EXALTED_SUN), new ItemStack(Material.SHROOMLIGHT), item(SlimefunItems.BLISTERING_INGOT_3),
+                new ItemStack(Material.GLOWSTONE), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.GLOWSTONE),
+                item(SlimefunItems.BLISTERING_INGOT_3), new ItemStack(Material.SHROOMLIGHT), item(CrystaStacks.EXALTED_SUN)
             }
         );
 
@@ -231,9 +236,9 @@ public class Runes {
             CrystaStacks.RUNE_DAWN,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EXALTED_DAWN, new ItemStack(Material.DEAD_FIRE_CORAL_BLOCK), SlimefunItems.APPLE_JUICE,
-                new ItemStack(Material.ORANGE_TULIP), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.ORANGE_TULIP),
-                SlimefunItems.APPLE_JUICE, new ItemStack(Material.DEAD_FIRE_CORAL_BLOCK), CrystaStacks.EXALTED_DAWN
+                item(CrystaStacks.EXALTED_DAWN), new ItemStack(Material.DEAD_FIRE_CORAL_BLOCK), item(SlimefunItems.APPLE_JUICE),
+                new ItemStack(Material.ORANGE_TULIP), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.ORANGE_TULIP),
+                item(SlimefunItems.APPLE_JUICE), new ItemStack(Material.DEAD_FIRE_CORAL_BLOCK), item(CrystaStacks.EXALTED_DAWN)
             }
         );
 
@@ -243,9 +248,9 @@ public class Runes {
             CrystaStacks.RUNE_TWILIGHT,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EXALTED_DUSK, new ItemStack(Material.FIRE_CORAL_BLOCK), SlimefunItems.PUMPKIN_JUICE,
-                new ItemStack(Material.CORNFLOWER), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.CORNFLOWER),
-                SlimefunItems.PUMPKIN_JUICE, new ItemStack(Material.FIRE_CORAL_BLOCK), CrystaStacks.EXALTED_DUSK
+                item(CrystaStacks.EXALTED_DUSK), new ItemStack(Material.FIRE_CORAL_BLOCK), item(SlimefunItems.PUMPKIN_JUICE),
+                new ItemStack(Material.CORNFLOWER), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.CORNFLOWER),
+                item(SlimefunItems.PUMPKIN_JUICE), new ItemStack(Material.FIRE_CORAL_BLOCK), item(CrystaStacks.EXALTED_DUSK)
             }
         );
 
@@ -255,9 +260,9 @@ public class Runes {
             CrystaStacks.RUNE_TRUE_FIRE,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EVISCERATING_PLATE, new ItemStack(Material.SOUL_CAMPFIRE), SlimefunItems.FIRE_RUNE,
-                new ItemStack(Material.FIRE_CHARGE), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.FIRE_CHARGE),
-                SlimefunItems.FIRE_RUNE, new ItemStack(Material.SOUL_CAMPFIRE), CrystaStacks.EVISCERATING_PLATE
+                item(CrystaStacks.EVISCERATING_PLATE), new ItemStack(Material.SOUL_CAMPFIRE), item(SlimefunItems.FIRE_RUNE),
+                new ItemStack(Material.FIRE_CHARGE), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.FIRE_CHARGE),
+                item(SlimefunItems.FIRE_RUNE), new ItemStack(Material.SOUL_CAMPFIRE), item(CrystaStacks.EVISCERATING_PLATE)
             }
         );
 
@@ -267,9 +272,9 @@ public class Runes {
             CrystaStacks.RUNE_CIRCLE,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EXALTED_FERTILITY_PHARO, new ItemStack(Material.OBSERVER), SlimefunItems.ELECTRIC_INGOT_FACTORY_3,
-                new ItemStack(Material.TARGET), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.TARGET),
-                SlimefunItems.ELECTRIC_INGOT_FACTORY_3, new ItemStack(Material.OBSERVER), CrystaStacks.EXALTED_FERTILITY_PHARO
+                item(CrystaStacks.EXALTED_FERTILITY_PHARO), new ItemStack(Material.OBSERVER), item(SlimefunItems.ELECTRIC_INGOT_FACTORY_3),
+                new ItemStack(Material.TARGET), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.TARGET),
+                item(SlimefunItems.ELECTRIC_INGOT_FACTORY_3), new ItemStack(Material.OBSERVER), item(CrystaStacks.EXALTED_FERTILITY_PHARO)
             }
         );
 
@@ -279,9 +284,9 @@ public class Runes {
             CrystaStacks.RUNE_BLINKING,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.WAYSTONE, new ItemStack(Material.ENDER_EYE), SlimefunItems.GPS_EMERGENCY_TRANSMITTER,
-                new ItemStack(Material.ENDER_PEARL), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.ENDER_PEARL),
-                SlimefunItems.GPS_EMERGENCY_TRANSMITTER, new ItemStack(Material.ENDER_EYE), CrystaStacks.WAYSTONE
+                item(CrystaStacks.WAYSTONE), new ItemStack(Material.ENDER_EYE), item(SlimefunItems.GPS_EMERGENCY_TRANSMITTER),
+                new ItemStack(Material.ENDER_PEARL), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.ENDER_PEARL),
+                item(SlimefunItems.GPS_EMERGENCY_TRANSMITTER), new ItemStack(Material.ENDER_EYE), item(CrystaStacks.WAYSTONE)
             }
         );
 
@@ -291,9 +296,9 @@ public class Runes {
             CrystaStacks.RUNE_SOUL,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.SOUL_STAND, new ItemStack(Material.ELYTRA), SlimefunItems.SOULBOUND_RUNE,
-                new ItemStack(Material.CAKE), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.CAKE),
-                SlimefunItems.SOULBOUND_RUNE, new ItemStack(Material.ELYTRA), CrystaStacks.SOUL_STAND
+                item(CrystaStacks.SOUL_STAND), new ItemStack(Material.ELYTRA), item(SlimefunItems.SOULBOUND_RUNE),
+                new ItemStack(Material.CAKE), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.CAKE),
+                item(SlimefunItems.SOULBOUND_RUNE), new ItemStack(Material.ELYTRA), item(CrystaStacks.SOUL_STAND)
             }
         );
 
@@ -303,9 +308,9 @@ public class Runes {
             CrystaStacks.RUNE_PUNISHMENT,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.MOB_CANDLE_DIM, new ItemStack(Material.LEAD), SlimefunItems.MONSTER_JERKY,
-                new ItemStack(Material.SOUL_LANTERN), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.SOUL_LANTERN),
-                SlimefunItems.MONSTER_JERKY, new ItemStack(Material.LEAD), CrystaStacks.MOB_CANDLE_DIM
+                item(CrystaStacks.MOB_CANDLE_DIM), new ItemStack(Material.LEAD), item(SlimefunItems.MONSTER_JERKY),
+                new ItemStack(Material.SOUL_LANTERN), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.SOUL_LANTERN),
+                item(SlimefunItems.MONSTER_JERKY), new ItemStack(Material.LEAD), item(CrystaStacks.MOB_CANDLE_DIM)
             }
         );
 
@@ -315,9 +320,9 @@ public class Runes {
             CrystaStacks.RUNE_TRUE_LIGHTNING,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.LUMINESCENCE_SCOOP, new ItemStack(Material.LIGHTNING_ROD), SlimefunItems.LIGHTNING_RUNE,
-                new ItemStack(Material.CHAIN), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.CHAIN),
-                SlimefunItems.LIGHTNING_RUNE, new ItemStack(Material.LIGHTNING_ROD), CrystaStacks.LUMINESCENCE_SCOOP
+                item(CrystaStacks.LUMINESCENCE_SCOOP), new ItemStack(Material.LIGHTNING_ROD), item(SlimefunItems.LIGHTNING_RUNE),
+                new ItemStack(Material.IRON_CHAIN), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.IRON_CHAIN),
+                item(SlimefunItems.LIGHTNING_RUNE), new ItemStack(Material.LIGHTNING_ROD), item(CrystaStacks.LUMINESCENCE_SCOOP)
             }
         );
 
@@ -327,9 +332,9 @@ public class Runes {
             CrystaStacks.RUNE_EIGHTFOLD,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EPHEMERAL_WORKBENCH, new ItemStack(Material.SPONGE), SlimefunItems.ENCHANTMENT_RUNE,
-                new ItemStack(Material.BASALT), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.BASALT),
-                SlimefunItems.ENCHANTMENT_RUNE, new ItemStack(Material.SPONGE), CrystaStacks.EPHEMERAL_WORKBENCH
+                item(CrystaStacks.EPHEMERAL_WORKBENCH), new ItemStack(Material.SPONGE), item(SlimefunItems.ENCHANTMENT_RUNE),
+                new ItemStack(Material.BASALT), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.BASALT),
+                item(SlimefunItems.ENCHANTMENT_RUNE), new ItemStack(Material.SPONGE), item(CrystaStacks.EPHEMERAL_WORKBENCH)
             }
         );
 
@@ -339,9 +344,9 @@ public class Runes {
             CrystaStacks.RUNE_CHARM,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.EXALTED_BEACON, new ItemStack(Material.RED_CANDLE), SlimefunItems.RAINBOW_RUNE,
-                new ItemStack(Material.POPPY), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.POPPY),
-                SlimefunItems.RAINBOW_RUNE, new ItemStack(Material.RED_CANDLE), CrystaStacks.EXALTED_BEACON
+                item(CrystaStacks.EXALTED_BEACON), new ItemStack(Material.RED_CANDLE), item(SlimefunItems.RAINBOW_RUNE),
+                new ItemStack(Material.POPPY), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.POPPY),
+                item(SlimefunItems.RAINBOW_RUNE), new ItemStack(Material.RED_CANDLE), item(CrystaStacks.EXALTED_BEACON)
             }
         );
 
@@ -351,9 +356,9 @@ public class Runes {
             CrystaStacks.RUNE_TRUE_WIND,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.SPIRITUAL_SILKEN, new ItemStack(Material.END_ROD), SlimefunItems.AIR_RUNE,
-                new ItemStack(Material.FEATHER), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.FEATHER),
-                SlimefunItems.AIR_RUNE, new ItemStack(Material.END_ROD), CrystaStacks.SPIRITUAL_SILKEN
+                item(CrystaStacks.SPIRITUAL_SILKEN), new ItemStack(Material.END_ROD), item(SlimefunItems.AIR_RUNE),
+                new ItemStack(Material.FEATHER), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.FEATHER),
+                item(SlimefunItems.AIR_RUNE), new ItemStack(Material.END_ROD), item(CrystaStacks.SPIRITUAL_SILKEN)
             }
         );
 
@@ -363,9 +368,9 @@ public class Runes {
             CrystaStacks.RUNE_BLACK_SWORD,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.INERT_PLATE, new ItemStack(Material.NETHERITE_SWORD), SlimefunItems.SWORD_OF_BEHEADING,
-                new ItemStack(Material.GOLDEN_SWORD), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.GOLDEN_SWORD),
-                SlimefunItems.SWORD_OF_BEHEADING, new ItemStack(Material.NETHERITE_SWORD), CrystaStacks.INERT_PLATE
+                item(CrystaStacks.INERT_PLATE), new ItemStack(Material.NETHERITE_SWORD), item(SlimefunItems.SWORD_OF_BEHEADING),
+                new ItemStack(Material.GOLDEN_SWORD), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.GOLDEN_SWORD),
+                item(SlimefunItems.SWORD_OF_BEHEADING), new ItemStack(Material.NETHERITE_SWORD), item(CrystaStacks.INERT_PLATE)
             }
         );
 
@@ -375,9 +380,9 @@ public class Runes {
             CrystaStacks.RUNE_BRIGHT_SHIELD,
             RecipeType.ANCIENT_ALTAR,
             new ItemStack[]{
-                CrystaStacks.INERT_PLATE, new ItemStack(Material.TURTLE_HELMET), SlimefunItems.SOLAR_HELMET,
-                new ItemStack(Material.SHIELD), CrystaStacks.ARCANE_SIGIL, new ItemStack(Material.SHIELD),
-                SlimefunItems.SOLAR_HELMET, new ItemStack(Material.TURTLE_HELMET), CrystaStacks.INERT_PLATE
+                item(CrystaStacks.INERT_PLATE), new ItemStack(Material.TURTLE_HELMET), item(SlimefunItems.SOLAR_HELMET),
+                new ItemStack(Material.SHIELD), item(CrystaStacks.ARCANE_SIGIL), new ItemStack(Material.SHIELD),
+                item(SlimefunItems.SOLAR_HELMET), new ItemStack(Material.TURTLE_HELMET), item(CrystaStacks.INERT_PLATE)
             }
         );
 

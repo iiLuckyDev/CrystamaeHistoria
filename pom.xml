@@ -5,11 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.sefiraat.crystamaehistoria</groupId>
     <artifactId>CrystamaeHistoria</artifactId>
-    <version>MODIFIED</version>
+    <version>4.1.0-UNOFFICIAL</version>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sonar.projectKey>Crystamae_Historia</sonar.projectKey>
         <sonar.organization>sefiraat</sonar.organization>
@@ -28,8 +27,12 @@
 
     <repositories>
         <repository>
+            <id>paper-repo</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
             <id>papermc</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
             <id>jitpack.io</id>
@@ -38,15 +41,6 @@
         <repository>
             <id>mcmmo-repo</id>
             <url>https://nexus.neetgames.com/repository/maven-public</url>
-        </repository>
-        <repository>
-            <id>jeff-media-public</id>
-            <url>https://hub.jeff-media.com/nexus/repository/jeff-media-public/</url>
-        </repository>
-        <repository>
-            <id>sefi-central</id>
-            <name>Sefiraat</name>
-            <url>https://sefiraat.jfrog.io/artifactory/default-maven-local</url>
         </repository>
         <repository>
             <id>bg-repo</id>
@@ -64,7 +58,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.6.0</version>
                 <configuration>
                     <relocations>
                         <relocation>
@@ -94,6 +88,15 @@
                                 <exclude>META-INF/MANIFEST.MF</exclude>
                             </excludes>
                         </filter>
+                        <filter>
+                            <artifact>io.github.mooy1:InfinityLib</artifact>
+                            <excludes>
+                                <exclude>io/github/mooy1/infinitylib/machines/MenuBlock.class</exclude>
+                                <exclude>io/github/mooy1/infinitylib/machines/MenuBlock$*.class</exclude>
+                                <exclude>io/github/mooy1/infinitylib/machines/CraftingBlock.class</exclude>
+                                <exclude>io/github/mooy1/infinitylib/machines/CraftingBlock$*.class</exclude>
+                            </excludes>
+                        </filter>
                     </filters>
                 </configuration>
                 <executions>
@@ -108,9 +111,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.12.1</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <release>${maven.compiler.release}</release>
                 </configuration>
             </plugin>
         </plugins>
@@ -134,14 +137,15 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.19-R0.1-SNAPSHOT</version>
+            <version>1.21.11-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Slimefun</groupId>
+            <groupId>io.github.thebusybiscuit.slimefun4</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>2c4f886</version>
-            <scope>provided</scope>
+            <version>5.0.0-UNOFFICIAL-with-pr-fix</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/../Minecraft Test Server/plugins/Slimefun v5.0.0-UNOFFICIAL-with-pr-fix.jar</systemPath>
         </dependency>
 
         <!-- Tools etc. -->
@@ -159,16 +163,9 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>de.jeff_media</groupId>
-            <artifactId>MorePersistentDataTypes</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
-
         <!-- Supported Plugins -->
         <dependency>
             <groupId>com.github.TheBusyBiscuit</groupId>
@@ -187,12 +184,6 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>io.github.sefiraat</groupId>
-            <artifactId>networks</artifactId>
-            <version>MODIFIED_1.0.7</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.elmakers.mine.bukkit</groupId>

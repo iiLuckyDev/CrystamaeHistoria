@@ -10,6 +10,7 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefacti
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeItem;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
@@ -30,6 +31,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @UtilityClass
 public class Uniques {
+
+    private static ItemStack item(SlimefunItemStack stack) {
+        return stack.item();
+    }
 
     @Getter
     private static Trophy storyTrophy;
@@ -100,7 +105,7 @@ public class Uniques {
 
         // Gilding Trophy
         RecipeItem gildedTrophyRecipe = new RecipeItem(
-            CrystaStacks.RUNE_SUN,
+            item(CrystaStacks.RUNE_SUN),
             StoryType.MECHANICAL, 100,
             StoryType.HUMAN, 100,
             StoryType.PHILOSOPHICAL, 100,
@@ -150,7 +155,7 @@ public class Uniques {
 
         // Valentines Trophy
         RecipeItem valentinesTrophyRecipe = new RecipeItem(
-            SlimefunItems.RAINBOW_WOOL_VALENTINE,
+            item(SlimefunItems.RAINBOW_WOOL_VALENTINE),
             StoryType.HUMAN, 250,
             StoryType.ELEMENTAL, 250,
             StoryType.HISTORICAL, 250,
@@ -428,7 +433,7 @@ public class Uniques {
     }
 
     private static void spawnBirthdayFirework(@Nonnull Location location, @Nonnull Color color) {
-        final Firework firework = (Firework) location.getWorld().spawnEntity(location, EntityType.FIREWORK);
+        final Firework firework = (Firework) location.getWorld().spawnEntity(location, EntityType.FIREWORK_ROCKET);
         final FireworkMeta fireworkMeta = firework.getFireworkMeta();
         fireworkMeta.addEffect(
             FireworkEffect.builder()

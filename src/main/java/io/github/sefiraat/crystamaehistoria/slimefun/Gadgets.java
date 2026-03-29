@@ -25,6 +25,7 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryRarity;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.CrystaTag;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
@@ -44,6 +45,10 @@ import java.util.Set;
 
 @UtilityClass
 public class Gadgets {
+
+    private static ItemStack item(SlimefunItemStack stack) {
+        return stack.item();
+    }
 
     @Getter
     private static MobLamp abstractionLamp;
@@ -153,7 +158,7 @@ public class Gadgets {
 
         // Dispersion Lamp
         RecipeItem dispersionLampRecipe = new RecipeItem(
-            CrystaStacks.ABSTRACTION_LAMP,
+            item(CrystaStacks.ABSTRACTION_LAMP),
             StoryType.ALCHEMICAL, 250,
             StoryType.HUMAN, 150,
             StoryType.PHILOSOPHICAL, 300
@@ -173,9 +178,9 @@ public class Gadgets {
             CrystaStacks.EXODUS_LAMP,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_BEGINNING, null,
-                CrystaStacks.RUNE_NIGHT, CrystaStacks.DISPERSION_LAMP, CrystaStacks.RUNE_TWILIGHT,
-                null, CrystaStacks.RUNE_BRIGHT_SHIELD, null
+                null, item(CrystaStacks.RUNE_BEGINNING), null,
+                item(CrystaStacks.RUNE_NIGHT), item(CrystaStacks.DISPERSION_LAMP), item(CrystaStacks.RUNE_TWILIGHT),
+                null, item(CrystaStacks.RUNE_BRIGHT_SHIELD), null
             },
             10,
             1
@@ -183,7 +188,7 @@ public class Gadgets {
 
         // Inversion Vacuum
         RecipeItem inversionVacuumRecipe = new RecipeItem(
-            CrystaStacks.ABSTRACTION_LAMP,
+            item(CrystaStacks.ABSTRACTION_LAMP),
             StoryType.HISTORICAL, 200,
             StoryType.VOID, 200,
             StoryType.PHILOSOPHICAL, 180
@@ -198,7 +203,7 @@ public class Gadgets {
 
         // Antipodal Vacuum
         RecipeItem antipodalVacuumRecipe = new RecipeItem(
-            CrystaStacks.DISPERSION_LAMP,
+            item(CrystaStacks.DISPERSION_LAMP),
             StoryType.HISTORICAL, 400,
             StoryType.VOID, 400,
             StoryType.PHILOSOPHICAL, 360
@@ -217,9 +222,9 @@ public class Gadgets {
             CrystaStacks.COUNTERPOLE_VACUUM,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_GATE, null,
-                CrystaStacks.RUNE_TRUE_HOLY, CrystaStacks.DISPERSION_LAMP, CrystaStacks.RUNE_SUN,
-                null, CrystaStacks.RUNE_TRUE_LIGHTNING, null
+                null, item(CrystaStacks.RUNE_GATE), null,
+                item(CrystaStacks.RUNE_TRUE_HOLY), item(CrystaStacks.DISPERSION_LAMP), item(CrystaStacks.RUNE_SUN),
+                null, item(CrystaStacks.RUNE_TRUE_LIGHTNING), null
             },
             15
         );
@@ -241,7 +246,7 @@ public class Gadgets {
             new ItemStack[]{
                 uniqueVoid, uniqueVoid, uniqueVoid,
                 new ItemStack(Material.DIRT), new ItemStack(Material.DIRT), new ItemStack(Material.DIRT),
-                CrystaStacks.AMALGAMATE_DUST_RARE, CrystaStacks.AMALGAMATE_DUST_RARE, CrystaStacks.AMALGAMATE_DUST_RARE
+                item(CrystaStacks.AMALGAMATE_DUST_RARE), item(CrystaStacks.AMALGAMATE_DUST_RARE), item(CrystaStacks.AMALGAMATE_DUST_RARE)
             },
             20,
             7,
@@ -259,7 +264,7 @@ public class Gadgets {
         dreadfulDirtSpawns.add(EntityType.ZOMBIE_VILLAGER);
 
         RecipeItem dreadfulDirtRecipe = new RecipeItem(
-            CrystaStacks.CURSED_EARTH,
+            item(CrystaStacks.CURSED_EARTH),
             StoryType.VOID, 700,
             StoryType.ANIMAL, 200,
             StoryType.HISTORICAL, 100
@@ -279,7 +284,7 @@ public class Gadgets {
         final List<EntityType> soulfilledSoilSpawns = new ArrayList<>();
 
         soulfilledSoilSpawns.add(EntityType.COW);
-        soulfilledSoilSpawns.add(EntityType.MUSHROOM_COW);
+        soulfilledSoilSpawns.add(EntityType.MOOSHROOM);
         soulfilledSoilSpawns.add(EntityType.CHICKEN);
         soulfilledSoilSpawns.add(EntityType.PIG);
         soulfilledSoilSpawns.add(EntityType.SHEEP);
@@ -297,9 +302,9 @@ public class Gadgets {
             CrystaStacks.SOULFILLED_SOIL,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_TRUE_EARTH, null,
-                CrystaStacks.RUNE_TRUE_WATER, CrystaStacks.DREADFUL_DIRT, CrystaStacks.RUNE_CIRCLE,
-                null, CrystaStacks.RUNE_SOUL, null
+                null, item(CrystaStacks.RUNE_TRUE_EARTH), null,
+                item(CrystaStacks.RUNE_TRUE_WATER), item(CrystaStacks.DREADFUL_DIRT), item(CrystaStacks.RUNE_CIRCLE),
+                null, item(CrystaStacks.RUNE_SOUL), null
             },
             10,
             15,
@@ -325,7 +330,7 @@ public class Gadgets {
 
         // Doomed Plate
         RecipeItem doomedPlateRecipe = new RecipeItem(
-            CrystaStacks.SEARING_PLATE,
+            item(CrystaStacks.SEARING_PLATE),
             StoryType.ALCHEMICAL, 240,
             StoryType.VOID, 440,
             StoryType.MECHANICAL, 360
@@ -341,7 +346,7 @@ public class Gadgets {
 
         // Eviscerating Plate
         RecipeItem evisceratingPlateRecipe = new RecipeItem(
-            CrystaStacks.DOOMED_PLATE,
+            item(CrystaStacks.DOOMED_PLATE),
             StoryType.ALCHEMICAL, 480,
             StoryType.VOID, 880,
             StoryType.MECHANICAL, 720
@@ -361,9 +366,9 @@ public class Gadgets {
             CrystaStacks.SHREDDING_PLATE,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_MOON, null,
-                CrystaStacks.RUNE_SOVEREIGN, CrystaStacks.EVISCERATING_PLATE, CrystaStacks.RUNE_BLINKING,
-                null, CrystaStacks.RUNE_CHARM, null
+                null, item(CrystaStacks.RUNE_MOON), null,
+                item(CrystaStacks.RUNE_SOVEREIGN), item(CrystaStacks.EVISCERATING_PLATE), item(CrystaStacks.RUNE_BLINKING),
+                null, item(CrystaStacks.RUNE_CHARM), null
             },
             3,
             true
@@ -371,7 +376,7 @@ public class Gadgets {
 
         // Trap Plate
         RecipeItem trapPlateRecipe = new RecipeItem(
-            CrystaStacks.EVISCERATING_PLATE,
+            item(CrystaStacks.EVISCERATING_PLATE),
             StoryType.ALCHEMICAL, 400,
             StoryType.CELESTIAL, 100,
             StoryType.MECHANICAL, 50
@@ -385,7 +390,7 @@ public class Gadgets {
 
         // Basic Exp Collector
         RecipeItem basicExpCollectorRecipe = new RecipeItem(
-            SlimefunItems.EXP_COLLECTOR,
+            item(SlimefunItems.EXP_COLLECTOR),
             StoryType.MECHANICAL, 150,
             StoryType.HUMAN, 200,
             StoryType.ANIMAL, 250
@@ -401,7 +406,7 @@ public class Gadgets {
 
         // Infused Exp Collector
         RecipeItem infusedExpCollectorRecipe = new RecipeItem(
-            CrystaStacks.EXP_COLLECTOR_BASIC,
+            item(CrystaStacks.EXP_COLLECTOR_BASIC),
             StoryType.MECHANICAL, 740,
             StoryType.HUMAN, 560,
             StoryType.ANIMAL, 885
@@ -421,9 +426,9 @@ public class Gadgets {
             CrystaStacks.EXP_COLLECTOR_ARCANE,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_CHANGE, null,
-                CrystaStacks.RUNE_DRAGON, CrystaStacks.EXP_COLLECTOR_INFUSED, CrystaStacks.RUNE_TRUE_FIRE,
-                null, CrystaStacks.RUNE_TRUE_WIND, null
+                null, item(CrystaStacks.RUNE_CHANGE), null,
+                item(CrystaStacks.RUNE_DRAGON), item(CrystaStacks.EXP_COLLECTOR_INFUSED), item(CrystaStacks.RUNE_TRUE_FIRE),
+                null, item(CrystaStacks.RUNE_TRUE_WIND), null
             },
             999999,
             8
@@ -435,9 +440,9 @@ public class Gadgets {
             CrystaStacks.ENDER_INHIBITOR_BASIC,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                CrystaStacks.UNCANNY_PEARL, CrystaStacks.UNCANNY_PEARL, CrystaStacks.UNCANNY_PEARL,
-                CrystaStacks.UNCANNY_PEARL, SlimefunItems.COOLER, CrystaStacks.UNCANNY_PEARL,
-                CrystaStacks.UNCANNY_PEARL, CrystaStacks.UNCANNY_PEARL, CrystaStacks.UNCANNY_PEARL
+                item(CrystaStacks.UNCANNY_PEARL), item(CrystaStacks.UNCANNY_PEARL), item(CrystaStacks.UNCANNY_PEARL),
+                item(CrystaStacks.UNCANNY_PEARL), item(SlimefunItems.COOLER), item(CrystaStacks.UNCANNY_PEARL),
+                item(CrystaStacks.UNCANNY_PEARL), item(CrystaStacks.UNCANNY_PEARL), item(CrystaStacks.UNCANNY_PEARL)
             },
             4
         );
@@ -448,9 +453,9 @@ public class Gadgets {
             CrystaStacks.ENDER_INHIBITOR_ADVANCED,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                CrystaStacks.GILDED_PEARL, CrystaStacks.GILDED_PEARL, CrystaStacks.GILDED_PEARL,
-                CrystaStacks.GILDED_PEARL, CrystaStacks.ENDER_INHIBITOR_BASIC, CrystaStacks.GILDED_PEARL,
-                CrystaStacks.GILDED_PEARL, CrystaStacks.GILDED_PEARL, CrystaStacks.GILDED_PEARL
+                item(CrystaStacks.GILDED_PEARL), item(CrystaStacks.GILDED_PEARL), item(CrystaStacks.GILDED_PEARL),
+                item(CrystaStacks.GILDED_PEARL), item(CrystaStacks.ENDER_INHIBITOR_BASIC), item(CrystaStacks.GILDED_PEARL),
+                item(CrystaStacks.GILDED_PEARL), item(CrystaStacks.GILDED_PEARL), item(CrystaStacks.GILDED_PEARL)
             },
             8
         );
@@ -473,7 +478,7 @@ public class Gadgets {
 
         // Bright Mob Candle
         RecipeItem brightMobCandleRecipe = new RecipeItem(
-            CrystaStacks.MOB_CANDLE_DIM,
+            item(CrystaStacks.MOB_CANDLE_DIM),
             StoryType.HISTORICAL, 100,
             StoryType.CELESTIAL, 100,
             StoryType.ANIMAL, 100
@@ -489,7 +494,7 @@ public class Gadgets {
 
         // Scintillating Mob Candle
         RecipeItem scintillatingMobCandleRecipe = new RecipeItem(
-            CrystaStacks.MOB_CANDLE_BRIGHT,
+            item(CrystaStacks.MOB_CANDLE_BRIGHT),
             StoryType.HISTORICAL, 200,
             StoryType.CELESTIAL, 200,
             StoryType.ANIMAL, 200
@@ -509,9 +514,9 @@ public class Gadgets {
             CrystaStacks.MOB_CANDLE_CORUSCATING,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_BEAST, null,
-                CrystaStacks.RUNE_BLACK, CrystaStacks.MOB_CANDLE_SCINTILLATING, CrystaStacks.RUNE_DAWN,
-                null, CrystaStacks.RUNE_EIGHTFOLD, null
+                null, item(CrystaStacks.RUNE_BEAST), null,
+                item(CrystaStacks.RUNE_BLACK), item(CrystaStacks.MOB_CANDLE_SCINTILLATING), item(CrystaStacks.RUNE_DAWN),
+                null, item(CrystaStacks.RUNE_EIGHTFOLD), null
             },
             64,
             1_209_600
@@ -523,7 +528,7 @@ public class Gadgets {
             CrystaStacks.MYSTERIOUS_POTTED_PLANT,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                null, CrystaStacks.AMALGAMATE_DUST_RARE, null,
+                null, item(CrystaStacks.AMALGAMATE_DUST_RARE), null,
                 null, new ItemStack(Material.FLOWER_POT), null,
                 null, null, null
             },
@@ -539,7 +544,7 @@ public class Gadgets {
 
         // Mysterious Plant
         RecipeItem mysteriousPlantRecipe = new RecipeItem(
-            CrystaStacks.MYSTERIOUS_POTTED_PLANT,
+            item(CrystaStacks.MYSTERIOUS_POTTED_PLANT),
             StoryType.ELEMENTAL, 25,
             StoryType.ALCHEMICAL, 25,
             StoryType.VOID, 25
@@ -553,7 +558,7 @@ public class Gadgets {
             15,
             block -> ParticleUtils.displayParticleEffect(
                 block.getLocation().add(0.5, 0.5, 0.5),
-                Particle.WATER_SPLASH,
+                Particle.SPLASH,
                 0.5,
                 3
             )
@@ -645,16 +650,16 @@ public class Gadgets {
             CrystaStacks.GREEN_HOUSE_GLASS,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_EPIC, new ItemStack(Material.GLASS), CrystaStacks.AMALGAMATE_DUST_EPIC,
-                new ItemStack(Material.GLASS), SlimefunItems.POWER_CRYSTAL, new ItemStack(Material.GLASS),
-                CrystaStacks.AMALGAMATE_DUST_EPIC, new ItemStack(Material.GLASS), CrystaStacks.AMALGAMATE_DUST_EPIC,
+                item(CrystaStacks.AMALGAMATE_DUST_EPIC), new ItemStack(Material.GLASS), item(CrystaStacks.AMALGAMATE_DUST_EPIC),
+                new ItemStack(Material.GLASS), item(SlimefunItems.POWER_CRYSTAL), new ItemStack(Material.GLASS),
+                item(CrystaStacks.AMALGAMATE_DUST_EPIC), new ItemStack(Material.GLASS), item(CrystaStacks.AMALGAMATE_DUST_EPIC),
             },
             5
         );
 
         // Focused Green House Glass
         RecipeItem focusedGreenHouseGlassRecipe = new RecipeItem(
-            CrystaStacks.GREEN_HOUSE_GLASS,
+            item(CrystaStacks.GREEN_HOUSE_GLASS),
             StoryType.ALCHEMICAL, 15,
             StoryType.ANIMAL, 40,
             StoryType.PHILOSOPHICAL, 30
@@ -673,9 +678,9 @@ public class Gadgets {
             CrystaStacks.GREEN_HOUSE_GLASS_MAGNIFYING,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.RUNE_BEGINNING, null,
-                CrystaStacks.RUNE_NIGHT, CrystaStacks.GREEN_HOUSE_GLASS_FOCUSED, CrystaStacks.RUNE_PUNISHMENT,
-                null, CrystaStacks.RUNE_BLACK_SWORD, null
+                null, item(CrystaStacks.RUNE_BEGINNING), null,
+                item(CrystaStacks.RUNE_NIGHT), item(CrystaStacks.GREEN_HOUSE_GLASS_FOCUSED), item(CrystaStacks.RUNE_PUNISHMENT),
+                null, item(CrystaStacks.RUNE_BLACK_SWORD), null
             },
             20
         );
@@ -744,7 +749,7 @@ public class Gadgets {
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
                 new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS),
-                new ItemStack(Material.GLASS), CrystaStacks.AMALGAMATE_INGOT_RARE, new ItemStack(Material.GLASS),
+                new ItemStack(Material.GLASS), item(CrystaStacks.AMALGAMATE_INGOT_RARE), new ItemStack(Material.GLASS),
                 new ItemStack(Material.GLASS), new ItemStack(Material.GLASS), new ItemStack(Material.GLASS)
             },
             CrystaStacks.ANGEL_BLOCK.asQuantity(8)
@@ -756,9 +761,9 @@ public class Gadgets {
             CrystaStacks.PHILOSOPHERS_SPRAY,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_INGOT_RARE, CrystaStacks.AMALGAMATE_INGOT_RARE, CrystaStacks.AMALGAMATE_INGOT_RARE,
-                CrystaStacks.AMALGAMATE_INGOT_RARE, new ItemStack(Material.DISPENSER), CrystaStacks.AMALGAMATE_INGOT_RARE,
-                CrystaStacks.AMALGAMATE_INGOT_RARE, CrystaStacks.ARCANE_DISPLACER, CrystaStacks.AMALGAMATE_INGOT_RARE
+                item(CrystaStacks.AMALGAMATE_INGOT_RARE), item(CrystaStacks.AMALGAMATE_INGOT_RARE), item(CrystaStacks.AMALGAMATE_INGOT_RARE),
+                item(CrystaStacks.AMALGAMATE_INGOT_RARE), new ItemStack(Material.DISPENSER), item(CrystaStacks.AMALGAMATE_INGOT_RARE),
+                item(CrystaStacks.AMALGAMATE_INGOT_RARE), item(CrystaStacks.ARCANE_DISPLACER), item(CrystaStacks.AMALGAMATE_INGOT_RARE)
             }
         );
 
@@ -769,14 +774,14 @@ public class Gadgets {
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
                 glass, null, glass,
-                glass, CrystaStacks.GLASS_OF_MILK, glass,
+                glass, item(CrystaStacks.GLASS_OF_MILK), glass,
                 glass, glass, glass
             }
         );
 
         // Fragmented Void
         RecipeItem fragmentedVoidRecipe = new RecipeItem(
-            SlimefunItems.INFUSED_HOPPER,
+            item(SlimefunItems.INFUSED_HOPPER),
             StoryType.VOID, 120,
             StoryType.MECHANICAL, 100,
             StoryType.CELESTIAL, 80
@@ -791,7 +796,7 @@ public class Gadgets {
 
         // Shattered Void
         RecipeItem shatteredVoidRecipe = new RecipeItem(
-            CrystaStacks.FRAGMENTED_VOID,
+            item(CrystaStacks.FRAGMENTED_VOID),
             StoryType.VOID, 120,
             StoryType.MECHANICAL, 100,
             StoryType.CELESTIAL, 80

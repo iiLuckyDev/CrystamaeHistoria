@@ -1,0 +1,72 @@
+/*
+ * Decompiled with CFR 0.152.
+ * 
+ * Could not load the following classes:
+ *  org.bukkit.Bukkit
+ *  org.bukkit.Effect
+ *  org.bukkit.Material
+ *  org.bukkit.Particle
+ *  org.bukkit.entity.Entity
+ *  org.bukkit.entity.Player
+ */
+package io.github.sefiraat.crystamaehistoria.magic.spells.tier1;
+
+import io.github.sefiraat.crystamaehistoria.magic.CastInformation;
+import io.github.sefiraat.crystamaehistoria.magic.spells.core.Spell;
+import io.github.sefiraat.crystamaehistoria.magic.spells.core.SpellCoreBuilder;
+import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeSpell;
+import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
+import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
+import java.util.UUID;
+import javax.annotation.Nonnull;
+import javax.annotation.ParametersAreNonnullByDefault;
+import org.bukkit.Bukkit;
+import org.bukkit.Effect;
+import org.bukkit.Material;
+import org.bukkit.Particle;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
+
+public class Squall
+extends Spell {
+    public Squall() {
+        SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(2000.0, true, 0.0, false, 10, true).makeInstantSpell(this::cast);
+        this.setSpellCore(spellCoreBuilder.build());
+    }
+
+    @ParametersAreNonnullByDefault
+    public void cast(CastInformation castInformation) {
+        Player caster = Bukkit.getPlayer((UUID)castInformation.getCaster());
+        if (caster != null) {
+            caster.getWorld().setThundering(true);
+            caster.getWorld().setStorm(true);
+            ParticleUtils.displayParticleEffect((Entity)caster, Particle.ELECTRIC_SPARK, 2.0, 30);
+            caster.getWorld().playEffect(caster.getLocation(), Effect.BONE_MEAL_USE, 1);
+        }
+    }
+
+    @Override
+    @Nonnull
+    public RecipeSpell getRecipe() {
+        return new RecipeSpell(1, StoryType.ALCHEMICAL, StoryType.HISTORICAL, StoryType.VOID);
+    }
+
+    @Override
+    @Nonnull
+    public String[] getLore() {
+        return new String[]{"Causes the heavens to open up and pour", "down."};
+    }
+
+    @Override
+    @Nonnull
+    public String getId() {
+        return "SQUALL";
+    }
+
+    @Override
+    @Nonnull
+    public Material getMaterial() {
+        return Material.BUCKET;
+    }
+}
+

@@ -22,10 +22,8 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.tools.plates.ChargedP
 import io.github.sefiraat.crystamaehistoria.slimefun.items.tools.satchel.CrystamageSatchel;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.tools.stave.Stave;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
-import io.github.sefiraat.networks.slimefun.NetworksSlimefunItemStacks;
-import io.github.sefiraat.networks.slimefun.network.NetworkBridge;
-import io.github.sefiraat.networks.slimefun.network.NetworkMonitor;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.cargo.CargoConnectorNode;
@@ -37,6 +35,10 @@ import org.bukkit.inventory.ItemStack;
 
 @UtilityClass
 public class Tools {
+
+    private static ItemStack item(SlimefunItemStack stack) {
+        return stack.item();
+    }
 
     @Getter
     private static SlimefunItem inertPlate;
@@ -110,7 +112,7 @@ public class Tools {
 
         // Inert Plate
         RecipeItem inertPlateRecipe = new RecipeItem(
-            SlimefunItems.REINFORCED_PLATE.clone(),
+            item(SlimefunItems.REINFORCED_PLATE),
             StoryType.ELEMENTAL, 10,
             StoryType.HUMAN, 10,
             StoryType.PHILOSOPHICAL, 10
@@ -138,7 +140,7 @@ public class Tools {
             CrystaStacks.STAVE_BASIC,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, null, CrystaStacks.AMALGAMATE_INGOT_UNIQUE,
+                null, null, item(CrystaStacks.AMALGAMATE_INGOT_UNIQUE),
                 null, new ItemStack(Material.STICK), null,
                 new ItemStack(Material.STICK), null, null
             },
@@ -151,9 +153,9 @@ public class Tools {
             CrystaStacks.STAVE_ADVANCED,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_INGOT_COMMON, CrystaStacks.AMALGAMATE_INGOT_COMMON, CrystaStacks.AMALGAMATE_INGOT_COMMON,
-                CrystaStacks.AMALGAMATE_INGOT_COMMON, CrystaStacks.STAVE_BASIC, CrystaStacks.AMALGAMATE_INGOT_COMMON,
-                CrystaStacks.AMALGAMATE_INGOT_COMMON, CrystaStacks.AMALGAMATE_INGOT_COMMON, CrystaStacks.AMALGAMATE_INGOT_COMMON
+                item(CrystaStacks.AMALGAMATE_INGOT_COMMON), item(CrystaStacks.AMALGAMATE_INGOT_COMMON), item(CrystaStacks.AMALGAMATE_INGOT_COMMON),
+                item(CrystaStacks.AMALGAMATE_INGOT_COMMON), item(CrystaStacks.STAVE_BASIC), item(CrystaStacks.AMALGAMATE_INGOT_COMMON),
+                item(CrystaStacks.AMALGAMATE_INGOT_COMMON), item(CrystaStacks.AMALGAMATE_INGOT_COMMON), item(CrystaStacks.AMALGAMATE_INGOT_COMMON)
             },
             2
         );
@@ -164,9 +166,9 @@ public class Tools {
             CrystaStacks.STAVE_ARCANE,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                CrystaStacks.RUNE_BEGINNING, CrystaStacks.RUNE_CHANGE, CrystaStacks.RUNE_DRAGON,
-                CrystaStacks.RUNE_SUN, CrystaStacks.STAVE_ADVANCED, CrystaStacks.RUNE_CIRCLE,
-                CrystaStacks.RUNE_TRUE_LIGHTNING, CrystaStacks.RUNE_CHARM, CrystaStacks.RUNE_BRIGHT_SHIELD
+                item(CrystaStacks.RUNE_BEGINNING), item(CrystaStacks.RUNE_CHANGE), item(CrystaStacks.RUNE_DRAGON),
+                item(CrystaStacks.RUNE_SUN), item(CrystaStacks.STAVE_ADVANCED), item(CrystaStacks.RUNE_CIRCLE),
+                item(CrystaStacks.RUNE_TRUE_LIGHTNING), item(CrystaStacks.RUNE_CHARM), item(CrystaStacks.RUNE_BRIGHT_SHIELD)
             },
             3
         );
@@ -177,9 +179,9 @@ public class Tools {
             CrystaStacks.REFRACTING_LENS,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.IMBUED_GLASS, null,
+                null, item(CrystaStacks.IMBUED_GLASS), null,
                 null, new ItemStack(Material.SPYGLASS), null,
-                null, CrystaStacks.AMALGAMATE_INGOT_COMMON, null
+                null, item(CrystaStacks.AMALGAMATE_INGOT_COMMON), null
             }
         );
 
@@ -189,9 +191,9 @@ public class Tools {
             CrystaStacks.THAUMATURGIC_SALTS,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                CrystaStacks.AMALGAMATE_DUST_COMMON, CrystaStacks.AMALGAMATE_DUST_COMMON, CrystaStacks.AMALGAMATE_DUST_COMMON,
-                CrystaStacks.AMALGAMATE_DUST_COMMON, SlimefunItems.SALT, CrystaStacks.AMALGAMATE_DUST_COMMON,
-                CrystaStacks.AMALGAMATE_DUST_COMMON, CrystaStacks.AMALGAMATE_DUST_COMMON, CrystaStacks.AMALGAMATE_DUST_COMMON
+                item(CrystaStacks.AMALGAMATE_DUST_COMMON), item(CrystaStacks.AMALGAMATE_DUST_COMMON), item(CrystaStacks.AMALGAMATE_DUST_COMMON),
+                item(CrystaStacks.AMALGAMATE_DUST_COMMON), item(SlimefunItems.SALT), item(CrystaStacks.AMALGAMATE_DUST_COMMON),
+                item(CrystaStacks.AMALGAMATE_DUST_COMMON), item(CrystaStacks.AMALGAMATE_DUST_COMMON), item(CrystaStacks.AMALGAMATE_DUST_COMMON)
             }
         );
 
@@ -201,9 +203,9 @@ public class Tools {
             CrystaStacks.CRYSTA_RECALL_LATTICE,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                new ItemStack(Material.AMETHYST_SHARD), CrystaStacks.AMALGAMATE_INGOT_EPIC, new ItemStack(Material.AMETHYST_SHARD),
-                CrystaStacks.AMALGAMATE_INGOT_EPIC, new ItemStack(Material.NETHER_STAR), CrystaStacks.AMALGAMATE_INGOT_EPIC,
-                new ItemStack(Material.AMETHYST_SHARD), CrystaStacks.AMALGAMATE_INGOT_EPIC, new ItemStack(Material.AMETHYST_SHARD)
+                new ItemStack(Material.AMETHYST_SHARD), item(CrystaStacks.AMALGAMATE_INGOT_EPIC), new ItemStack(Material.AMETHYST_SHARD),
+                item(CrystaStacks.AMALGAMATE_INGOT_EPIC), new ItemStack(Material.NETHER_STAR), item(CrystaStacks.AMALGAMATE_INGOT_EPIC),
+                new ItemStack(Material.AMETHYST_SHARD), item(CrystaStacks.AMALGAMATE_INGOT_EPIC), new ItemStack(Material.AMETHYST_SHARD)
             }
         );
 
@@ -223,7 +225,7 @@ public class Tools {
 
         // Ephemeral Workbench
         RecipeItem ephemeralWorkBenchRecipe = new RecipeItem(
-            CrystaStacks.EPHEMERAL_CRAFT_TABLE,
+            item(CrystaStacks.EPHEMERAL_CRAFT_TABLE),
             StoryType.HUMAN, 250,
             StoryType.HISTORICAL, 100,
             StoryType.PHILOSOPHICAL, 250
@@ -252,7 +254,7 @@ public class Tools {
 
         // Brilliance Scoop
         RecipeItem brillianceScoopRecipe = new RecipeItem(
-            CrystaStacks.LUMINESCENCE_SCOOP,
+            item(CrystaStacks.LUMINESCENCE_SCOOP),
             StoryType.CELESTIAL, 140,
             StoryType.ALCHEMICAL, 40,
             StoryType.HUMAN, 30
@@ -267,7 +269,7 @@ public class Tools {
 
         // Lustre Scoop
         RecipeItem lustreScoopRecipe = new RecipeItem(
-            CrystaStacks.BRILLIANCE_SCOOP,
+            item(CrystaStacks.BRILLIANCE_SCOOP),
             StoryType.CELESTIAL, 280,
             StoryType.ALCHEMICAL, 80,
             StoryType.HUMAN, 60
@@ -286,9 +288,9 @@ public class Tools {
             CrystaStacks.RADIANCE_SCOOP,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[] {
-                null, CrystaStacks.RUNE_TRUE_EARTH, null,
-                CrystaStacks.RUNE_TRUE_WATER, CrystaStacks.LUSTRE_SCOOP, CrystaStacks.RUNE_TWILIGHT,
-                null, CrystaStacks.RUNE_CHARM, null
+                null, item(CrystaStacks.RUNE_TRUE_EARTH), null,
+                item(CrystaStacks.RUNE_TRUE_WATER), item(CrystaStacks.LUSTRE_SCOOP), item(CrystaStacks.RUNE_TWILIGHT),
+                null, item(CrystaStacks.RUNE_CHARM), null
             },
             500,
             true
@@ -329,16 +331,16 @@ public class Tools {
             CrystaStacks.INCORPOREAL_SILKEN,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[] {
-                null, CrystaStacks.RUNE_MOON, null,
-                CrystaStacks.RUNE_TRUE_HOLY, CrystaStacks.SPIRITUAL_SILKEN, CrystaStacks.RUNE_BLINKING,
-                null, CrystaStacks.RUNE_TRUE_LIGHTNING, null
+                null, item(CrystaStacks.RUNE_MOON), null,
+                item(CrystaStacks.RUNE_TRUE_HOLY), item(CrystaStacks.SPIRITUAL_SILKEN), item(CrystaStacks.RUNE_BLINKING),
+                null, item(CrystaStacks.RUNE_TRUE_LIGHTNING), null
             },
             1000
         );
 
         // Simple Displacer
         RecipeItem simpleDisplacerRecipe = new RecipeItem(
-            CrystaStacks.POWDERED_ESSENCE,
+            item(CrystaStacks.POWDERED_ESSENCE),
             StoryType.ALCHEMICAL, 120,
             StoryType.ANIMAL, 70,
             StoryType.HUMAN, 60
@@ -353,7 +355,7 @@ public class Tools {
 
         // Arcane Displacer
         RecipeItem arcaneDisplacerRecipe = new RecipeItem(
-            CrystaStacks.SIMPLE_DISPLACER,
+            item(CrystaStacks.SIMPLE_DISPLACER),
             StoryType.ALCHEMICAL, 240,
             StoryType.ANIMAL, 140,
             StoryType.HUMAN, 120
@@ -383,7 +385,7 @@ public class Tools {
 
         // Searing Sponge
         RecipeItem searingSpongeRecipe = new RecipeItem(
-            CrystaStacks.SPONGE_BALMY,
+            item(CrystaStacks.SPONGE_BALMY),
             StoryType.ELEMENTAL, 90,
             StoryType.ALCHEMICAL, 60,
             StoryType.VOID, 50
@@ -402,9 +404,9 @@ public class Tools {
             CrystaStacks.SPONGE_SUPER_MASSIVE,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[] {
-                null, CrystaStacks.RUNE_CHANGE, null,
-                CrystaStacks.RUNE_SUN, CrystaStacks.SPONGE_SEARING, CrystaStacks.RUNE_CIRCLE,
-                null, CrystaStacks.RUNE_EIGHTFOLD, null
+                null, item(CrystaStacks.RUNE_CHANGE), null,
+                item(CrystaStacks.RUNE_SUN), item(CrystaStacks.SPONGE_SEARING), item(CrystaStacks.RUNE_CIRCLE),
+                null, item(CrystaStacks.RUNE_EIGHTFOLD), null
             },
             10
         );
@@ -429,8 +431,8 @@ public class Tools {
             CrystaStacks.DISPLACED_VOID,
             RecipeType.MAGIC_WORKBENCH,
             new ItemStack[]{
-                null, CrystaStacks.ARCANE_DISPLACER, null,
-                null, CrystaStacks.SHATTERED_VOID, null,
+                null, item(CrystaStacks.ARCANE_DISPLACER), null,
+                null, item(CrystaStacks.SHATTERED_VOID), null,
                 null, null, null
             }
         );
@@ -452,7 +454,7 @@ public class Tools {
 
         // Crystamages Satchel
         RecipeItem crystamagesSatchelRecipe = new RecipeItem(
-            CrystaStacks.SATCHEL_1,
+            item(CrystaStacks.SATCHEL_1),
             StoryType.ALCHEMICAL, 35,
             StoryType.ANIMAL, 35,
             StoryType.VOID, 35
@@ -467,7 +469,7 @@ public class Tools {
 
         // Wizards Satchel
         RecipeItem wizardsSatchelRecipe = new RecipeItem(
-            CrystaStacks.SATCHEL_2,
+            item(CrystaStacks.SATCHEL_2),
             StoryType.MECHANICAL, 45,
             StoryType.HISTORICAL, 45,
             StoryType.CELESTIAL, 45
@@ -482,7 +484,7 @@ public class Tools {
 
         // Conjurers Satchel
         RecipeItem conjurersSatchelRecipe = new RecipeItem(
-            CrystaStacks.SATCHEL_3,
+            item(CrystaStacks.SATCHEL_3),
             StoryType.ELEMENTAL, 55,
             StoryType.HUMAN, 55,
             StoryType.PHILOSOPHICAL, 55
@@ -497,7 +499,7 @@ public class Tools {
 
         // Sorcerers Satchel
         RecipeItem sorcerersSatchelRecipe = new RecipeItem(
-            CrystaStacks.SATCHEL_4,
+            item(CrystaStacks.SATCHEL_4),
             StoryType.ALCHEMICAL, 65,
             StoryType.ANIMAL, 65,
             StoryType.VOID, 65
@@ -512,7 +514,7 @@ public class Tools {
 
         // Grandmasters Satchel
         RecipeItem grandmastersSatchelRecipe = new RecipeItem(
-            CrystaStacks.SATCHEL_5,
+            item(CrystaStacks.SATCHEL_5),
             StoryType.MECHANICAL, 75,
             StoryType.HISTORICAL, 75,
             StoryType.CELESTIAL, 75
@@ -594,7 +596,7 @@ public class Tools {
         if (!SupportedPluginManager.isHeadLimiter()) {
             // Cargo Cover
             RecipeItem cargoCoverRecipe = new RecipeItem(
-                SlimefunItems.CARGO_INPUT_NODE,
+                item(SlimefunItems.CARGO_INPUT_NODE),
                 StoryType.MECHANICAL, 10,
                 StoryType.HUMAN, 10,
                 StoryType.VOID, 10
@@ -610,7 +612,7 @@ public class Tools {
 
             // Energy Net Cover
             RecipeItem energyNetCoverRecipe = new RecipeItem(
-                SlimefunItems.ENERGY_CONNECTOR,
+                item(SlimefunItems.ENERGY_CONNECTOR),
                 StoryType.MECHANICAL, 10,
                 StoryType.HUMAN, 10,
                 StoryType.VOID, 10
@@ -633,27 +635,64 @@ public class Tools {
         }
 
         if (SupportedPluginManager.isNetworks()) {
+            final ItemStack networksBridge = resolveNetworksBridgeItem();
+            final Class<? extends SlimefunItem>[] networksCoverTypes = resolveNetworksCoverTypes();
 
-            // Networks Cover
-            RecipeItem networksCoverRecipe = new RecipeItem(
-                NetworksSlimefunItemStacks.NETWORK_BRIDGE,
-                StoryType.MECHANICAL, 10,
-                StoryType.HUMAN, 10,
-                StoryType.VOID, 10
-            );
-            networkNodeCover = new BlockVeil(
-                ItemGroups.TOOLS,
-                CrystaStacks.NETWORKS_COVER,
-                CrystaRecipeTypes.LIQUEFACTION_CRAFTING,
-                networksCoverRecipe.getDisplayRecipe(),
-                CrystaStacks.NETWORKS_COVER.asQuantity(8),
-                NetworkBridge.class,
-                NetworkMonitor.class
-            );
+            if (networksBridge != null && networksCoverTypes.length == 2) {
+                // Networks Cover
+                RecipeItem networksCoverRecipe = new RecipeItem(
+                    networksBridge,
+                    StoryType.MECHANICAL, 10,
+                    StoryType.HUMAN, 10,
+                    StoryType.VOID, 10
+                );
+                networkNodeCover = new BlockVeil(
+                    ItemGroups.TOOLS,
+                    CrystaStacks.NETWORKS_COVER,
+                    CrystaRecipeTypes.LIQUEFACTION_CRAFTING,
+                    networksCoverRecipe.getDisplayRecipe(),
+                    CrystaStacks.NETWORKS_COVER.asQuantity(8),
+                    networksCoverTypes
+                );
 
-            networkNodeCover.register(plugin);
+                networkNodeCover.register(plugin);
 
-            LiquefactionBasinCache.addCraftingRecipe(networkNodeCover, networksCoverRecipe);
+                LiquefactionBasinCache.addCraftingRecipe(networkNodeCover, networksCoverRecipe);
+            } else {
+                plugin.getLogger().warning("Networks was detected but its API could not be resolved, skipping Networks cover registration.");
+            }
         }
+    }
+
+    private static ItemStack resolveNetworksBridgeItem() {
+        try {
+            Class<?> stacksClass = Class.forName("io.github.sefiraat.networks.slimefun.NetworksSlimefunItemStacks");
+            Object stack = stacksClass.getField("NETWORK_BRIDGE").get(null);
+            if (stack instanceof ItemStack itemStack) {
+                return itemStack.clone();
+            }
+        } catch (ReflectiveOperationException ignored) {
+            // Handled by the caller with a single warning.
+        }
+
+        return null;
+    }
+
+    @SuppressWarnings("unchecked")
+    private static Class<? extends SlimefunItem>[] resolveNetworksCoverTypes() {
+        try {
+            Class<?> bridgeClass = Class.forName("io.github.sefiraat.networks.slimefun.network.NetworkBridge");
+            Class<?> monitorClass = Class.forName("io.github.sefiraat.networks.slimefun.network.NetworkMonitor");
+            if (SlimefunItem.class.isAssignableFrom(bridgeClass) && SlimefunItem.class.isAssignableFrom(monitorClass)) {
+                return new Class[]{
+                    (Class<? extends SlimefunItem>) bridgeClass,
+                    (Class<? extends SlimefunItem>) monitorClass
+                };
+            }
+        } catch (ReflectiveOperationException ignored) {
+            // Handled by the caller with a single warning.
+        }
+
+        return new Class[0];
     }
 }

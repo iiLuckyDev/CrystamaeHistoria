@@ -11,6 +11,7 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefacti
 import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefactionbasin.RecipeItem;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
 import lombok.Getter;
@@ -106,11 +107,15 @@ public class ArtisticItems {
     @Getter
     private static PoseCloner poseCloner;
 
+    private static ItemStack item(SlimefunItemStack stack) {
+        return stack.item();
+    }
+
     public static void setup() {
 
         CrystamaeHistoria plugin = CrystamaeHistoria.getInstance();
 
-        final ItemStack brushCore = CrystaStacks.BASIC_FIBRES;
+        final ItemStack brushCore = item(CrystaStacks.BASIC_FIBRES);
         final ItemStack dyeBlack = new ItemStack(Material.BLACK_DYE);
         final ItemStack dyeBlue = new ItemStack(Material.BLUE_DYE);
         final ItemStack dyeBrown = new ItemStack(Material.BROWN_DYE);
@@ -354,7 +359,7 @@ public class ArtisticItems {
 
         // Black Paintbrush 1000
         RecipeItem blackPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_BLACK_100,
+            item(CrystaStacks.PAINT_BRUSH_BLACK_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -370,7 +375,7 @@ public class ArtisticItems {
 
         // Blue Paintbrush 1000
         RecipeItem bluePaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_BLUE_100,
+            item(CrystaStacks.PAINT_BRUSH_BLUE_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -386,7 +391,7 @@ public class ArtisticItems {
 
         // Brown Paintbrush 1000
         RecipeItem brownPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_BROWN_100,
+            item(CrystaStacks.PAINT_BRUSH_BROWN_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -402,7 +407,7 @@ public class ArtisticItems {
 
         // Cyan Paintbrush 1000
         RecipeItem cyanPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_CYAN_100,
+            item(CrystaStacks.PAINT_BRUSH_CYAN_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -418,7 +423,7 @@ public class ArtisticItems {
 
         // Gray Paintbrush 1000
         RecipeItem grayPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_GRAY_100,
+            item(CrystaStacks.PAINT_BRUSH_GRAY_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -434,7 +439,7 @@ public class ArtisticItems {
 
         // Green Paintbrush 1000
         RecipeItem greenPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_GREEN_100,
+            item(CrystaStacks.PAINT_BRUSH_GREEN_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -450,7 +455,7 @@ public class ArtisticItems {
 
         // Light Blue Paintbrush 1000
         RecipeItem lightBluePaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_LIGHT_BLUE_100,
+            item(CrystaStacks.PAINT_BRUSH_LIGHT_BLUE_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -466,7 +471,7 @@ public class ArtisticItems {
 
         // Light Gray Paintbrush 1000
         RecipeItem lightGrayPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_LIGHT_GRAY_100,
+            item(CrystaStacks.PAINT_BRUSH_LIGHT_GRAY_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -482,7 +487,7 @@ public class ArtisticItems {
 
         // Lime Paintbrush 1000
         RecipeItem limePaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_LIME_100,
+            item(CrystaStacks.PAINT_BRUSH_LIME_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -498,7 +503,7 @@ public class ArtisticItems {
 
         // Magenta Paintbrush 1000
         RecipeItem magentaPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_MAGENTA_100,
+            item(CrystaStacks.PAINT_BRUSH_MAGENTA_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -514,7 +519,7 @@ public class ArtisticItems {
 
         // Orange Paintbrush 1000
         RecipeItem orangePaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_ORANGE_100,
+            item(CrystaStacks.PAINT_BRUSH_ORANGE_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -530,7 +535,7 @@ public class ArtisticItems {
 
         // Pink Paintbrush 1000
         RecipeItem pinkPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_PINK_100,
+            item(CrystaStacks.PAINT_BRUSH_PINK_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -546,7 +551,7 @@ public class ArtisticItems {
 
         // Purple Paintbrush 1000
         RecipeItem purplePaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_PURPLE_100,
+            item(CrystaStacks.PAINT_BRUSH_PURPLE_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -562,7 +567,7 @@ public class ArtisticItems {
 
         // Red Paintbrush 1000
         RecipeItem redPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_RED_100,
+            item(CrystaStacks.PAINT_BRUSH_RED_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -578,7 +583,7 @@ public class ArtisticItems {
 
         // White Paintbrush 1000
         RecipeItem whitePaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_WHITE_100,
+            item(CrystaStacks.PAINT_BRUSH_WHITE_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -594,7 +599,7 @@ public class ArtisticItems {
 
         // Yellow Paintbrush 1000
         RecipeItem yellowPaintbrush1000Recipe = new RecipeItem(
-            CrystaStacks.PAINT_BRUSH_YELLOW_100,
+            item(CrystaStacks.PAINT_BRUSH_YELLOW_100),
             StoryType.HISTORICAL, 25,
             StoryType.HUMAN, 25,
             StoryType.PHILOSOPHICAL, 25
@@ -614,9 +619,9 @@ public class ArtisticItems {
             CrystaStacks.MYSTICAL_PIGMENTATO,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                CrystaStacks.PAINT_BRUSH_BLACK_1000, CrystaStacks.PAINT_BRUSH_BLUE_1000, CrystaStacks.PAINT_BRUSH_BROWN_1000,
-                CrystaStacks.PAINT_BRUSH_CYAN_1000, CrystaStacks.AMALGAMATE_DUST_EPIC, CrystaStacks.PAINT_BRUSH_GRAY_1000,
-                CrystaStacks.PAINT_BRUSH_GREEN_1000, CrystaStacks.PAINT_BRUSH_LIGHT_BLUE_1000, CrystaStacks.PAINT_BRUSH_LIGHT_GRAY_1000
+                item(CrystaStacks.PAINT_BRUSH_BLACK_1000), item(CrystaStacks.PAINT_BRUSH_BLUE_1000), item(CrystaStacks.PAINT_BRUSH_BROWN_1000),
+                item(CrystaStacks.PAINT_BRUSH_CYAN_1000), item(CrystaStacks.AMALGAMATE_DUST_EPIC), item(CrystaStacks.PAINT_BRUSH_GRAY_1000),
+                item(CrystaStacks.PAINT_BRUSH_GREEN_1000), item(CrystaStacks.PAINT_BRUSH_LIGHT_BLUE_1000), item(CrystaStacks.PAINT_BRUSH_LIGHT_GRAY_1000)
             }
         );
 
@@ -626,9 +631,9 @@ public class ArtisticItems {
             CrystaStacks.MYSTICAL_TINTANNO,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                CrystaStacks.PAINT_BRUSH_LIME_1000, CrystaStacks.PAINT_BRUSH_MAGENTA_1000, CrystaStacks.PAINT_BRUSH_ORANGE_1000,
-                CrystaStacks.PAINT_BRUSH_PINK_1000, CrystaStacks.AMALGAMATE_DUST_EPIC, CrystaStacks.PAINT_BRUSH_PURPLE_1000,
-                CrystaStacks.PAINT_BRUSH_RED_1000, CrystaStacks.PAINT_BRUSH_WHITE_1000, CrystaStacks.PAINT_BRUSH_YELLOW_1000
+                item(CrystaStacks.PAINT_BRUSH_LIME_1000), item(CrystaStacks.PAINT_BRUSH_MAGENTA_1000), item(CrystaStacks.PAINT_BRUSH_ORANGE_1000),
+                item(CrystaStacks.PAINT_BRUSH_PINK_1000), item(CrystaStacks.AMALGAMATE_DUST_EPIC), item(CrystaStacks.PAINT_BRUSH_PURPLE_1000),
+                item(CrystaStacks.PAINT_BRUSH_RED_1000), item(CrystaStacks.PAINT_BRUSH_WHITE_1000), item(CrystaStacks.PAINT_BRUSH_YELLOW_1000)
             }
         );
 
@@ -639,7 +644,7 @@ public class ArtisticItems {
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
                 null, null, null,
-                CrystaStacks.MYSTICAL_TINTANNO, CrystaStacks.AMALGAMATE_INGOT_MYTHICAL, CrystaStacks.MYSTICAL_PIGMENTATO,
+                item(CrystaStacks.MYSTICAL_TINTANNO), item(CrystaStacks.AMALGAMATE_INGOT_MYTHICAL), item(CrystaStacks.MYSTICAL_PIGMENTATO),
                 null, null, null
             }
         );
@@ -692,9 +697,9 @@ public class ArtisticItems {
             CrystaStacks.MYSTICAL_ATTITUDINIZER,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                CrystaStacks.BASIC_FIBRES, CrystaStacks.BASIC_FIBRES, CrystaStacks.BASIC_FIBRES,
-                CrystaStacks.BODY_STAND, CrystaStacks.MIND_STAND, CrystaStacks.SOUL_STAND,
-                CrystaStacks.BASIC_FIBRES, CrystaStacks.BASIC_FIBRES, CrystaStacks.BASIC_FIBRES,
+                item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.BASIC_FIBRES),
+                item(CrystaStacks.BODY_STAND), item(CrystaStacks.MIND_STAND), item(CrystaStacks.SOUL_STAND),
+                item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.BASIC_FIBRES),
             }
         );
 
@@ -718,9 +723,9 @@ public class ArtisticItems {
             CrystaStacks.POSE_CHANGER,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                CrystaStacks.BASIC_FIBRES, CrystaStacks.AMALGAMATE_INGOT_EPIC, CrystaStacks.BASIC_FIBRES,
-                CrystaStacks.AMALGAMATE_INGOT_EPIC, CrystaStacks.MYSTICAL_ATTITUDINIZER, CrystaStacks.AMALGAMATE_INGOT_EPIC,
-                CrystaStacks.BASIC_FIBRES, CrystaStacks.AMALGAMATE_INGOT_EPIC, CrystaStacks.BASIC_FIBRES,
+                item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.AMALGAMATE_INGOT_EPIC), item(CrystaStacks.BASIC_FIBRES),
+                item(CrystaStacks.AMALGAMATE_INGOT_EPIC), item(CrystaStacks.MYSTICAL_ATTITUDINIZER), item(CrystaStacks.AMALGAMATE_INGOT_EPIC),
+                item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.AMALGAMATE_INGOT_EPIC), item(CrystaStacks.BASIC_FIBRES),
             }
         );
 
@@ -730,9 +735,9 @@ public class ArtisticItems {
             CrystaStacks.POSE_CLONER,
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
-                CrystaStacks.BASIC_FIBRES, CrystaStacks.AMALGAMATE_INGOT_UNIQUE, CrystaStacks.BASIC_FIBRES,
-                CrystaStacks.AMALGAMATE_INGOT_RARE, bodyStand.getItem(), CrystaStacks.AMALGAMATE_INGOT_RARE,
-                CrystaStacks.BASIC_FIBRES, CrystaStacks.AMALGAMATE_INGOT_UNIQUE, CrystaStacks.BASIC_FIBRES,
+                item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.AMALGAMATE_INGOT_UNIQUE), item(CrystaStacks.BASIC_FIBRES),
+                item(CrystaStacks.AMALGAMATE_INGOT_RARE), bodyStand.getItem(), item(CrystaStacks.AMALGAMATE_INGOT_RARE),
+                item(CrystaStacks.BASIC_FIBRES), item(CrystaStacks.AMALGAMATE_INGOT_UNIQUE), item(CrystaStacks.BASIC_FIBRES),
             }
         );
 

@@ -1,8 +1,6 @@
 package io.github.sefiraat.crystamaehistoria.utils;
 
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerHead;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
 import lombok.Getter;
 import org.bukkit.inventory.ItemStack;
 
@@ -88,7 +86,7 @@ public enum Skulls {
     }
 
     public ItemStack getPlayerHead() {
-        return PlayerHead.getItemStack(PlayerSkin.fromHashCode(hash));
+        return Util.fromBase64Hash(hash);
     }
 
 }

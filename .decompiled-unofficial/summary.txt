@@ -1,0 +1,9 @@
+Summary for CrystamaeHistoria v4.1.0-UNOFFICIAL.jar
+Decompiled with CFR 0.152
+
+
+io.github.sefiraat.crystamaehistoria.slikey.effectlib.util.ImageLoadTask
+----------------------------
+
+run()
+  Unable to fully structure code
